@@ -1,3 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@variants hover {
+  .brighter-50 {
+    filter: brightness(150%);
+  }
+}
+
 html {
   font-size: 62.5%;
 }
@@ -12,15 +22,14 @@ header {
 }
 
 nav {
-  text-align: right;
+  text-align: center;
 }
 
 nav a {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: black;
+  @apply yc-font-medium;
+  @apply yc-font-bold;
   text-decoration: none;
-  text-transform: uppercase;
+  color: #404040;
 }
 
 footer {

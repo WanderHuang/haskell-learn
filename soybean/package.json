@@ -1,0 +1,23 @@
+{
+  "name": "soybean",
+  "version": "1.0.0",
+  "description": "wander's blog",
+  "main": "index.js",
+  "scripts": {
+    "build": "node ./scripts/build.js",
+    "start": "npm run build:css && node ./scripts/start.js",
+    "build:css": "NODE_ENV=production tailwind build css/default.css -o css/theme.css"
+  },
+  "keywords": [],
+  "author": "wander",
+  "license": "ISC",
+  "dependencies": {
+    "tailwindcss": "^2.1.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.2.5",
+    "chalk": "^4.1.1",
+    "node-watch": "^0.7.1",
+    "postcss": "^8.2.15"
+  }
+}
