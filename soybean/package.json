@@ -6,7 +6,7 @@
   "scripts": {
     "build": "node ./scripts/build.js",
     "start": "npm run build:css && node ./scripts/start.js",
-    "build:css": "NODE_ENV=production tailwind build css/default.css -o css/theme.css"
+    "build:css": "node ./scripts/build-css.js"
   },
   "keywords": [],
   "author": "wander",
@@ -18,6 +18,8 @@
     "autoprefixer": "^10.2.5",
     "chalk": "^4.1.1",
     "node-watch": "^0.7.1",
-    "postcss": "^8.2.15"
+    "postcss": "^8.2.15",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^22.0.0"
   }
 }

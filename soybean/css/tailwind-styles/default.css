@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-size: 14px;
+}
+
+body {
+  @apply yc-mx-128 yc-font-sans yc-bg-purple-50 dark:yc-bg-gray-800 dark:yc-text-purple-50;
+}
+
+header nav a {
+  @apply yc-px-2 yc-inline-block;
+}
+
+header nav a:hover {
+  animation: pulse 2s;
+}
+
+section.header {
+  @apply yc-text-right yc-text-gray-500 dark:yc-text-blue-200;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply yc-font-bold yc-my-4 dark:yc-text-blue-500;
+}
+
+h1 {
+  @apply yc-text-4xl yc-text-center;
+}
+
+h2 {
+  @apply yc-text-3xl;
+}
+
+h3 {
+  @apply yc-text-2xl;
+}
+
+h4 {
+  @apply yc-text-xl;
+}
+
+h5 {
+  @apply yc-text-lg;
+}
+
+h6 {
+  @apply yc-text-base;
+}
+
+.post-header {
+  @apply yc-flex yc-flex-row yc-py-3 yc-text-xl;
+}
+
+.post-header .logo {
+  @apply yc-text-purple-400 yc-w-24 dark:yc-text-green-400;
+}
+
+.post-header nav {
+  @apply yc-flex-1;
+}
+
+blockquote {
+  @apply yc-border-purple-400 yc-border-l-4 yc-mt-3 yc-mb-3 yc-text-gray-600 yc-text-lg yc-bg-purple-200 yc-rounded-lg yc-px-4 yc-shadow dark:yc-border-green-400 dark:yc-bg-green-50;
+}
+
+pre {
+  @apply yc-shadow-lg;
+}
+
+hr {
+  @apply yc-border-l-2 yc-my-3 yc-border-gray-500 dark:yc-border-blue-400;
+}
+
+p {
+  @apply yc-text-base yc-mt-0 yc-mb-2;
+
+  text-indent: 2em;
+}
+
+p > code {
+  @apply yc-text-orange-400 yc-px-2 yc-bg-gray-200;
+}
+
+img {
+  @apply yc-mx-auto yc-shadow yc-p-4;
+}
+
+a {
+  @apply yc-text-purple-400 yc-no-underline dark:yc-text-green-400;
+}
+
+a:hover {
+  @apply yc-text-purple-700 dark:yc-text-green-700;
+}
+
+table {
+  @apply yc-border-separate yc-border yc-border-purple-200 yc-mx-auto dark:yc-border-green-200;
+
+  min-width: 300px;
+}
+
+table thead {
+  @apply yc-bg-purple-200 dark:yc-bg-green-200;
+}
+
+table tbody tr:nth-child(2n) {
+  @apply yc-bg-purple-100 dark:yc-bg-green-100 dark:yc-text-blue-500;
+}
+
+table tbody tr,
+table thead tr {
+  @apply dark:yc-text-blue-600;
+}
+
+ol {
+  counter-reset: section;
+  list-style-type: none;
+}
+
+ol li::before {
+  counter-increment: section;
+  content: counters(section, ".") "  ";
+}
+
+ol ul {
+  @apply yc-ml-4;
+}
+
+ul {
+  list-style: disc;
+}
+
+ul ul {
+  list-style: circle;
+
+  @apply yc-ml-4;
+}
+
+ul ul ul {
+  list-style: square inside;
+
+  @apply yc-ml-4;
+}
+
+ul.task-list {
+  list-style: none;
+}
+
+footer {
+  @apply yc-py-4 yc-text-center yc-text-gray-400 dark:yc-text-green-100;
+}

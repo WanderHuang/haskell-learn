@@ -1,0 +1,22 @@
+/* theme-switcher */
+.comp-switcher__toggle-checkbox:checked {
+  @apply yc-right-0 dark:yc-bg-green-200;
+
+  right: 0;
+}
+
+.comp-switcher__toggle-checkbox:checked + .comp-switcher__toggle-label {
+  @apply dark:yc-bg-green-200;
+}
+
+.theme-switcher {
+  @apply yc-relative yc-inline-block yc-w-10 yc-mr-2 yc-align-middle yc-select-none yc-transition yc-duration-200 yc-ease-in;
+}
+
+.theme-switcher .comp-switcher__toggle-checkbox {
+  @apply yc-absolute yc-block yc-w-6 yc-h-6 yc-rounded-full yc-border-4 yc-appearance-none yc-cursor-pointer yc-border-purple-400 yc-bg-purple-200 dark:yc-border-green-400 dark:yc-bg-green-200;
+}
+
+.theme-switcher .comp-switcher__toggle-label {
+  @apply yc-block yc-overflow-hidden yc-h-6 yc-rounded-full yc-bg-purple-200 yc-cursor-pointer;
+}

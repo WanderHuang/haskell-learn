@@ -10,6 +10,7 @@ module.exports = {
     "./templates/**/*.md",
     "*.md",
   ],
+  darkMode: "class",
   theme: {
     screens: {
       sm: "480px",
@@ -22,6 +23,12 @@ module.exports = {
       blue: colors.lightBlue,
       red: colors.rose,
       pink: colors.fuchsia,
+      purple: colors.purple,
+      cyan: colors.cyan,
+      black: colors.black,
+      green: colors.green,
+      white: colors.white,
+      orange: colors.orange,
     },
     fontFamily: {
       sans: ["Graphik", "sans-serif"],

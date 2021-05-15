@@ -6,12 +6,13 @@ let app;
 
 try {
   log.info("Building...");
-  fn.exec("cabal exec site rebuild", (err, _, stderr) => {
+	// need `cabal new-install` run at first
+  fn.exec("site rebuild", (err, _, stderr) => {
     log.info("Building Success ! We can start now.");
 
     if (err) throw new Error(stderr);
     log.info("$ Watching Soybean: http://localhost:8000/ $");
-    app = fn.exec("cabal exec site watch", (err, _, stderr) => {
+    app = fn.exec("site watch", (err, _, stderr) => {
       if (err) throw new Error(stderr);
     });
   });
@@ -40,8 +41,8 @@ watch(
 
 watch("templates", { recursive: true }, (_, name) => {
   log.info(new Date(), name, "call rebuilding");
-  fn.exec("cabal exec site rebuild", (err, _, stderr) => {
-    if (err) return;
+  fn.exec("site rebuild", (err, _, stderr) => {
+    if (err) return log.error(err);
     log.info(new Date(), name, "call rebuilding");
   });
 });
