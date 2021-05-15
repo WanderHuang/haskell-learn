@@ -1,6 +1,8 @@
 ---
-title: Contact
+title: 联系
 ---
 
-I live in a small hut in the mountains of Kumano Kodō on Kii Hantō and would not
-like to be contacted.
+Base: Cheng Du, China
+
+- [github](https://github.com/WanderHuang)
+- [email](mailto:wanderjie@gmail.com?subject=Hello，Bean&body=Hello, Bean)
