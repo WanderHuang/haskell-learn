@@ -16,7 +16,7 @@ main = hakyll $ do
     route idRoute
     compile compressCssCompiler
 
-  match (fromList ["about.rst", "contact.markdown"]) $ do
+  match (fromList ["about.md", "contact.md"]) $ do
     route $ setExtension "html"
     compile $
       pandocCompiler
@@ -45,20 +45,34 @@ main = hakyll $ do
         >>= loadAndApplyTemplate "templates/default.html" indexCtx
         >>= relativizeUrls
 
-  match "templates/**" $ compile templateBodyCompiler
-
-  create ["archive.html"] $ do
+  tags <- buildTags "posts/**" (fromCapture "tags/*.html")
+  create ["tags.html"] $ do
     route idRoute
     compile $ do
       posts <- recentFirst =<< loadAll "posts/**"
-      let archiveCtx =
-            listField "posts" postCtx (return posts)
-              `mappend` constField "title" "Archives"
+      let tagsCtx =
+            listField "posts" (postCtxWithTags tags) (return posts)
+              `mappend` field "tags" (\_ -> renderTagList tags)
               `mappend` defaultContext
 
       makeItem ""
-        >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
-        >>= loadAndApplyTemplate "templates/default.html" archiveCtx
+        >>= loadAndApplyTemplate "templates/tags.html" tagsCtx
+        >>= loadAndApplyTemplate "templates/default.html" tagsCtx
+        >>= relativizeUrls
+
+  tagsRules tags $ \tag pattern -> do
+    let title = "标签： \"" ++ tag ++ "\""
+    route idRoute
+    compile $ do
+      posts <- recentFirst =<< loadAll pattern
+      let ctx =
+            constField "title" title
+              `mappend` listField "posts" (postCtxWithTags tags) (return posts)
+              `mappend` defaultContext
+
+      makeItem ""
+        >>= loadAndApplyTemplate "templates/tag-list.html" ctx
+        >>= loadAndApplyTemplate "templates/default.html" ctx
         >>= relativizeUrls
 
   create ["rss.xml"] $ do
@@ -68,12 +82,17 @@ main = hakyll $ do
       posts <- fmap (take 10) . recentFirst =<< loadAllSnapshots "posts/**" "content"
       renderRss myFeedConfiguration feedCtx posts
 
+  match "templates/**" $ compile templateBodyCompiler
+
 --------------------------------------------------------------------------------
 postCtx :: Context String
 postCtx =
   dateField "date" "%B %e, %Y"
     `mappend` modificationTimeField "modTime" "%B %e, %Y at %T"
     `mappend` defaultContext
+
+postCtxWithTags :: Tags -> Context String
+postCtxWithTags tags = tagsField "tags" tags `mappend` postCtx
 
 myFeedConfiguration :: FeedConfiguration
 myFeedConfiguration =
