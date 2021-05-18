@@ -6,7 +6,7 @@ let app;
 
 try {
   log.info("Building...");
-	// need `cabal new-install` run at first
+  // need `cabal new-install` run at first
   fn.exec("site rebuild", (err, _, stderr) => {
     log.info("Building Success ! We can start now.");
 
@@ -43,6 +43,24 @@ watch("templates", { recursive: true }, (_, name) => {
   log.info(new Date(), name, "call rebuilding");
   fn.exec("site rebuild", (err, _, stderr) => {
     if (err) return log.error(err);
-    log.info(new Date(), name, "call rebuilding");
+    log.info(new Date(), name, "rebuilding successfully");
   });
 });
+
+/*
+watch("site.hs", { recursive: false }, (_, name) => {
+  log.info(new Date(), name, "call reinstall");
+  fn.exec("cabal --overwrite-policy=always new-install", (err, _, stderr) => {
+    if (err) return log.error(err);
+
+    log.info(new Date(), name, "reinstall successfully");
+    log.info(new Date(), name, "call rebuilding");
+
+    fn.exec("site rebuild", (err, _, stderr) => {
+      if (err) return log.error(stderr);
+
+      log.info(new Date(), name, "rebuilding successfully");
+    });
+  });
+});
+*/

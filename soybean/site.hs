@@ -2,6 +2,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 
 import Data.Monoid (mappend)
+import Data.Time.Format
 import Hakyll
 
 --------------------------------------------------------------------------------
@@ -59,26 +60,27 @@ main = hakyll $ do
         >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
         >>= loadAndApplyTemplate "templates/default.html" archiveCtx
         >>= relativizeUrls
-  
+
   create ["rss.xml"] $ do
     route idRoute
     compile $ do
-        let feedCtx = postCtx `mappend` bodyField "description"
-        posts <- fmap (take 10) . recentFirst =<< loadAllSnapshots "posts/**" "content"
-        renderRss myFeedConfiguration feedCtx posts
-
+      let feedCtx = postCtx `mappend` bodyField "description"
+      posts <- fmap (take 10) . recentFirst =<< loadAllSnapshots "posts/**" "content"
+      renderRss myFeedConfiguration feedCtx posts
 
 --------------------------------------------------------------------------------
 postCtx :: Context String
 postCtx =
-  dateField "date" "%B %e, %Y"
+  dateField "date" "%B %e, %Y %T"
+    `mappend` modificationTimeField "modTime" "%B %e, %Y at %T"
     `mappend` defaultContext
 
 myFeedConfiguration :: FeedConfiguration
-myFeedConfiguration = FeedConfiguration
-    { feedTitle       = "Soybean Blog"
-    , feedDescription = "Think more"
-    , feedAuthorName  = "Wander"
-    , feedAuthorEmail = "wanderjie@gmail.com"
-    , feedRoot        = "http://hakyll.soybean.site"
+myFeedConfiguration =
+  FeedConfiguration
+    { feedTitle = "Soybean Blog",
+      feedDescription = "Think more",
+      feedAuthorName = "Wander",
+      feedAuthorEmail = "wanderjie@gmail.com",
+      feedRoot = "http://hakyll.soybean.site"
     }
