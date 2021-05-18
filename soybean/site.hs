@@ -71,7 +71,7 @@ main = hakyll $ do
 --------------------------------------------------------------------------------
 postCtx :: Context String
 postCtx =
-  dateField "date" "%B %e, %Y %T"
+  dateField "date" "%B %e, %Y"
     `mappend` modificationTimeField "modTime" "%B %e, %Y at %T"
     `mappend` defaultContext
 

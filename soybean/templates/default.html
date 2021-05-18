@@ -28,19 +28,20 @@
           box.checked = true
         }
       }
+    }
 
-      function toggleTheme(target) {
-        const theme = localStorage.getItem("theme") || "light";
-        const next = theme === "light" ? "yc-dark" : "light";
-        let dom = document.querySelector("html");
+    function toggleTheme(target) {
+      const theme = localStorage.getItem("theme") || "light";
+      const next = theme === "light" ? "yc-dark" : "light";
+      let dom = document.querySelector("html");
 
-        dom.className = next;
-        localStorage.setItem("theme", next);
-      }
+      dom.className = next;
+      localStorage.setItem("theme", next);
+    }
 
-      window.onload = function onload() {
-        init();
-      };
+    window.onload = function onload() {
+      init();
+    };
     </script>
   </head>
 
