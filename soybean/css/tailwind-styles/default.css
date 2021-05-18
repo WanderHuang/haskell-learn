@@ -10,11 +10,19 @@ body {
   @apply yc-mx-128 yc-font-sans yc-bg-purple-50 dark:yc-bg-gray-800 dark:yc-text-purple-50;
 }
 
-header nav a {
+.post-header {
+  @apply yc-flex yc-flex-row yc-py-3 yc-text-xl;
+}
+
+.post-header nav {
+  @apply yc-flex-1;
+}
+
+.post-header nav a {
   @apply yc-px-2 yc-inline-block;
 }
 
-header nav a:hover {
+.post-header nav a:hover {
   animation: pulse 2s;
 }
 
@@ -53,18 +61,6 @@ h5 {
 
 h6 {
   @apply yc-text-base;
-}
-
-.post-header {
-  @apply yc-flex yc-flex-row yc-py-3 yc-text-xl;
-}
-
-.post-header .logo {
-  @apply yc-text-purple-400 yc-w-24 dark:yc-text-green-400;
-}
-
-.post-header nav {
-  @apply yc-flex-1;
 }
 
 blockquote {

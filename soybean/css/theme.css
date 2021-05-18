@@ -621,13 +621,26 @@ body {
   color: rgba(250, 245, 255, var(--tw-text-opacity));
 }
 
-header nav a {
+.post-header {
+  display: flex;
+  flex-direction: row;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.post-header nav {
+  flex: 1 1 0%;
+}
+
+.post-header nav a {
   display: inline-block;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
 
-header nav a:hover {
+.post-header nav a:hover {
   -webkit-animation: pulse 2s;
           animation: pulse 2s;
 }
@@ -683,33 +696,6 @@ h5 {
 h6 {
   font-size: 1rem;
   line-height: 1.5rem;
-}
-
-.post-header {
-  display: flex;
-  flex-direction: row;
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-}
-
-.post-header .logo {
-  --tw-text-opacity: 1;
-  color: rgba(192, 132, 252, var(--tw-text-opacity));
-}
-
-.yc-dark .post-header .logo {
-  --tw-text-opacity: 1;
-  color: rgba(74, 222, 128, var(--tw-text-opacity));
-}
-
-.post-header .logo {
-  width: 6rem;
-}
-
-.post-header nav {
-  flex: 1 1 0%;
 }
 
 blockquote {

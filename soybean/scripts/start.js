@@ -47,7 +47,6 @@ watch("templates", { recursive: true }, (_, name) => {
   });
 });
 
-/*
 watch("site.hs", { recursive: false }, (_, name) => {
   log.info(new Date(), name, "call reinstall");
   fn.exec("cabal --overwrite-policy=always new-install", (err, _, stderr) => {
@@ -63,4 +62,4 @@ watch("site.hs", { recursive: false }, (_, name) => {
     });
   });
 });
-*/
+
