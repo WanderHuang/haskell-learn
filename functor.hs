@@ -1,0 +1,21 @@
+-- syntax
+--
+-- class Functor f where
+--     fmap :: (a -> b) -> f a -> f b
+--     (<$) :: a -> f b -> f a
+-- 最小实现为fmap函数
+--
+-- Functor是一个抽象数据类型 f a
+-- 一个新的Functor f b可以根据 f a 变换所有的值来得到
+-- f表示实现了Functor的一个数据结果，可以对a类型的数据进行映射
+--
+--
+-- rules
+--
+-- 交换律，可以透传id函数
+-- fmap id = id
+-- 结合律
+-- fmap (f . g) == fmap f . fmap g
+--
+--
+--
