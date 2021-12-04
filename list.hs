@@ -1,6 +1,18 @@
 import Data.Char
 import Data.List
 
+-- 生成数组 [2, 7]
+favNums = 2 : 7 : [] 
+
+-- 连续数组
+zeroToTen = [0..10]
+eventList = [2, 4..20]
+letters = ['a', 'c'..'z']
+infinPow10 = [10, 20..] --惰性求值
+many2s = take 10 (repeat 2)
+listTimes3 = [x * 3 | x <- [1..10], x * 3 <= 50] -- 条件过滤
+multTable = [[x * y | y <- [1..10]] | x <- [1..10]] -- 条件过滤生成二维数组
+
 -- list数据结构
 ints :: [Int]
 ints = [1, 2, 3]

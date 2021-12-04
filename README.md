@@ -11,6 +11,15 @@ You should go, because left is not right!
 
 ## 基本语法
 
+haskell的一大特色是语法特色
+
+1. 惰性求值
+2. 模式匹配
+3. 强类型系统、多态
+4. Monad
+
+> lisp使用模板-宏定义来实现更高级功能
+
 ### data|type|newtype 区别
 
 ```hs
