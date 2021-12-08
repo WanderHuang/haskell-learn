@@ -1,4 +1,10 @@
+/* purgecss start ignore */
+
 /* theme-switcher */
+
+.comp-switcher__toggle-checkbox:checked {
+  right: 0px;
+}
 
 .yc-dark .comp-switcher__toggle-checkbox:checked {
   --tw-bg-opacity: 1;
@@ -6,7 +12,6 @@
 }
 
 .comp-switcher__toggle-checkbox:checked {
-  right: 0px;
   right: 0;
 }
 
@@ -16,40 +21,37 @@
 }
 
 .theme-switcher {
-  display: inline-block;
-  margin-right: 0.5rem;
   position: relative;
+  margin-right: 0.5rem;
+  display: inline-block;
+  width: 2.5rem;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
   vertical-align: middle;
-  width: 2.5rem;
   transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
   transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
   transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
   transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
 
 .theme-switcher .comp-switcher__toggle-checkbox {
+  position: absolute;
+  display: block;
+  height: 1.5rem;
+  width: 1.5rem;
+  cursor: pointer;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  --tw-bg-opacity: 1;
-  background-color: rgba(233, 213, 255, var(--tw-bg-opacity));
-}
-
-.yc-dark .theme-switcher .comp-switcher__toggle-checkbox {
-  --tw-bg-opacity: 1;
-  background-color: rgba(187, 247, 208, var(--tw-bg-opacity));
-}
-
-.theme-switcher .comp-switcher__toggle-checkbox {
+  border-radius: 9999px;
+  border-width: 4px;
   --tw-border-opacity: 1;
-  border-color: rgba(192, 132, 252, var(--tw-border-opacity));
+  border-color: rgba(251, 146, 60, var(--tw-border-opacity));
 }
 
 .yc-dark .theme-switcher .comp-switcher__toggle-checkbox {
@@ -58,21 +60,23 @@
 }
 
 .theme-switcher .comp-switcher__toggle-checkbox {
-  border-radius: 9999px;
-  border-width: 4px;
-  cursor: pointer;
-  display: block;
-  height: 1.5rem;
-  position: absolute;
-  width: 1.5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgba(254, 215, 170, var(--tw-bg-opacity));
+}
+
+.yc-dark .theme-switcher .comp-switcher__toggle-checkbox {
+  --tw-bg-opacity: 1;
+  background-color: rgba(187, 247, 208, var(--tw-bg-opacity));
 }
 
 .theme-switcher .comp-switcher__toggle-label {
-  --tw-bg-opacity: 1;
-  background-color: rgba(233, 213, 255, var(--tw-bg-opacity));
-  border-radius: 9999px;
-  cursor: pointer;
   display: block;
   height: 1.5rem;
+  cursor: pointer;
   overflow: hidden;
+  border-radius: 9999px;
+  --tw-bg-opacity: 1;
+  background-color: rgba(254, 215, 170, var(--tw-bg-opacity));
 }
+
+/* purgecss end ignore */

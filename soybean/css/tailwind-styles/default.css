@@ -7,9 +7,38 @@ html {
 }
 
 body {
-  @apply yc-mx-128 yc-font-sans yc-bg-purple-50 dark:yc-bg-gray-800 dark:yc-text-purple-50;
+  @apply yc-mx-128 yc-font-sans yc-bg-orange-50 dark:yc-bg-gray-800 dark:yc-text-orange-50;
 }
 
+@media (min-width: 480px) {
+  body {
+    @apply yc-mx-10 yc-font-sans yc-bg-orange-50 dark:yc-bg-gray-800 dark:yc-text-orange-50;
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    @apply yc-mx-60 yc-font-sans yc-bg-orange-50 dark:yc-bg-gray-800 dark:yc-text-orange-50;
+  }
+}
+
+@media (min-width: 976px) {
+  body {
+    @apply yc-mx-64 yc-font-sans yc-bg-orange-50 dark:yc-bg-gray-800 dark:yc-text-orange-50;
+  }
+}
+
+@media (min-width: 1440px) {
+  body {
+    @apply yc-mx-96 yc-font-sans yc-bg-orange-50 dark:yc-bg-gray-800 dark:yc-text-orange-50;
+  }
+}
+
+@media (min-width: 1680px) {
+  body {
+    @apply yc-mx-128 yc-font-sans yc-bg-orange-50 dark:yc-bg-gray-800 dark:yc-text-orange-50;
+  }
+}
 .post-header {
   @apply yc-flex yc-flex-row yc-py-3 yc-text-xl;
 }
@@ -64,7 +93,7 @@ h6 {
 }
 
 blockquote {
-  @apply yc-border-purple-400 yc-border-l-4 yc-mt-3 yc-mb-3 yc-text-gray-600 yc-text-lg yc-bg-purple-200 yc-rounded-lg yc-px-4 yc-shadow dark:yc-border-green-400 dark:yc-bg-green-50;
+  @apply yc-border-orange-400 yc-border-l-4 yc-mt-3 yc-mb-3 yc-text-gray-600 yc-text-lg yc-bg-orange-200 yc-rounded-lg yc-px-4 yc-shadow dark:yc-border-green-400 dark:yc-bg-green-50;
 }
 
 pre {
@@ -90,25 +119,26 @@ img {
 }
 
 a {
-  @apply yc-text-purple-400 yc-no-underline dark:yc-text-green-400;
+  @apply yc-text-orange-400 yc-no-underline dark:yc-text-green-400;
 }
 
 a:hover {
-  @apply yc-text-purple-700 dark:yc-text-green-700;
+  @apply yc-text-orange-700 dark:yc-text-green-700;
 }
 
 table {
-  @apply yc-border-separate yc-border yc-border-purple-200 yc-mx-auto dark:yc-border-green-200;
+  @apply yc-border-separate yc-border yc-border-orange-200 yc-mx-auto dark:yc-border-green-200;
 
   min-width: 300px;
 }
 
 table thead {
-  @apply yc-bg-purple-200 dark:yc-bg-green-200;
+  @apply yc-bg-orange-200 dark:yc-bg-green-200;
 }
 
+
 table tbody tr:nth-child(2n) {
-  @apply yc-bg-purple-100 dark:yc-bg-green-100 dark:yc-text-blue-500;
+  @apply yc-bg-orange-100 dark:yc-bg-green-100 dark:yc-text-blue-500;
 }
 
 table tbody tr,
@@ -153,3 +183,4 @@ ul.task-list {
 footer {
   @apply yc-py-4 yc-text-center yc-text-gray-400 dark:yc-text-green-100;
 }
+

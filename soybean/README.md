@@ -9,3 +9,4 @@
 3. 安装本地应用`cabal new-install`
 4. `stack exec site watch`本地运行
 5. `stack exec site build`打包
+6. `npm install && npm start`
